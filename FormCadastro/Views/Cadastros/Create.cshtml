@@ -1,0 +1,88 @@
+﻿@model FormCadastro.Models.DbCadastro
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Novo</h1>
+
+<h4>Tela para adicionar novo cadastro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nome" class="control-label"></label>
+                <input asp-for="nome" class="form-control" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datanascimento" class="control-label"></label>
+                <input asp-for="datanascimento" class="form-control" />
+                <span asp-validation-for="datanascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sexo" class="control-label"></label>
+                <input asp-for="sexo" class="form-control" />
+                <span asp-validation-for="sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rua" class="control-label"></label>
+                <input asp-for="rua" class="form-control" />
+                <span asp-validation-for="rua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numero" class="control-label"></label>
+                <input asp-for="numero" class="form-control" />
+                <span asp-validation-for="numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cep" class="control-label"></label>
+                <input asp-for="cep" class="form-control" />
+                <span asp-validation-for="cep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cidade" class="control-label"></label>
+                <input asp-for="cidade" class="form-control" />
+                <span asp-validation-for="cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="grauurgencia" class="control-label"></label>
+                <input asp-for="grauurgencia" class="form-control" />
+                <span asp-validation-for="grauurgencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mensagem" class="control-label"></label>
+                <input asp-for="mensagem" class="form-control" />
+                <span asp-validation-for="mensagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numerocaracteres" class="control-label"></label>
+                <input asp-for="numerocaracteres" class="form-control" />
+                <span asp-validation-for="numerocaracteres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Retornar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

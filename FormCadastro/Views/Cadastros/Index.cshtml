@@ -1,0 +1,102 @@
+﻿@model IEnumerable<FormCadastro.Models.DbCadastro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gerenciador de Chamados</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Adicionar Chamado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+            <th>
+                Sexo
+            </th>
+            <th>
+                Rua
+            </th>
+            <th>
+               Número
+            </th>
+            <th>
+                CEP
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Grau de Urgencia
+            </th>
+            <th>
+                Mensagem
+
+            </th>
+            <th>
+                Numero de Caracteres 
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datanascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grauurgencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mensagem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numerocaracteres)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.id" class="btn btn-secondary">Detalhes</a> 
+                <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
